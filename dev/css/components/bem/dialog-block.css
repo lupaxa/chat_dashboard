@@ -31,7 +31,7 @@ body{
     @descendent chat{
         width: 64%;
         max-width: 55.5rem;
-        padding:2rem 0;
+        /*padding:2rem 0;*/
         margin: 0 1.5rem;
         display: flex;
         justify-content: space-between;
@@ -50,20 +50,20 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 1.5rem;
-        padding: 1.1rem 0;
+        margin: 0 1.7rem;
+        padding: 1.2rem 0;
         border-bottom: 1px solid #edf0f2;
     }
 
-    @descendent btn-add{
-
+    @descendent content{
+        padding-bottom: 4rem;
     }
 }
 
 
 
 @component btn{
-    padding: 1rem 3rem;
+    padding: 1rem 3.2rem;
     background-color: #d6e3ec;
     border-radius: 3px;
     text-transform: uppercase;
@@ -111,7 +111,7 @@ body{
         display: flex;
         justify-content: space-between;
         line-height: 1;
-        padding-top: 0.7rem;
+        padding-top: 0.5rem;
     }
     @descendent link{
         display: block;
@@ -135,12 +135,19 @@ body{
 
 }
 
+
+/*------------------USER--------------*/
 @component user{
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     @descendent name{
+        margin-right: 1.2rem;
         color: #34495e;
         font-size: 1.6rem;
+        @modifier chat{
+            font-size: 1.7rem;
+        }
         @modifier have-msg{
             font-weight: 700;
         }
@@ -150,9 +157,13 @@ body{
         display: inline-block;
         width: 1rem;
         height: 1rem;
+        margin-bottom: 0.2rem;
         border-radius: 50%;
         box-shadow: 0 2px 4px #51dacf;
-
+        @modifier chat-list{
+            width: 0.8rem;
+            height: 0.8rem;
+        }
         @modifier online{
             background-color: #51dacf;
         }
@@ -161,10 +172,84 @@ body{
 
 }
 
+
+
+@component chat{
+    width: 100%;
+    @descendent header{
+        padding: 1.7rem 0 1.9rem 0;
+        border-bottom: 1px solid #edf0f2;
+    }
+}
+
+@component message-log{
+    @descendent item{
+        margin-top: 1.6rem;
+    }
+}
+
+/*------------------message--------------*/
 @component message{
+    display: flex;
+    align-items: top;
+    justify-content: flex-end;
     color: #8ea1b4;
     font-size: 1.2rem;
     font-weight: 400;
+    @descendent user-photo{
+        flex-shrink: 0;
+        margin-left: 2.3rem;
+    }
+    @descendent content{
+        position: relative;
+        max-width: 60%;
+        padding: 1.2rem 1.5rem 1.1rem 1.5rem;
+        border-radius: 2rem;
+        background-color: #3598db;
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+             right: -7px;
+             top: 12px;
+            width: 1.5rem;
+            height: 1.4rem;
+            background-image: url(../img/icon/triangle.png);
+             z-index: -1;
+        }
+    }
+    @descendent unit{
+        color: #fefefe;
+        font-size: 1.2rem;
+    }
+
+    @modifier interlocutor{
+        justify-content: flex-start;
+
+        .message__user-photo{
+            margin-right: 2.9rem;
+            margin-left: 0;
+        }
+        .message__content{
+            order: 1;
+            background-color: white;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                left: -7px;
+                top: 12px;
+                width: 1.5rem;
+                height: 1.4rem;
+                background-image: url(../img/icon/triangle1.png);
+            }
+        }
+        .message__unit{
+            color: #8ea1b4;
+        }
+
+    }
+
 }
 
 @component action-box{
@@ -176,23 +261,39 @@ body{
 }
 
 
+
+
+
+
 @component action-btn{
+    display: block;
+    padding: 0 0.5rem;
+    margin-left: 1.5rem;
     @descendent icon{
         width: 20px;
         height: 20px;
         display: block;
         background-image: url(../img/icon/call.png);
         background-repeat: no-repeat;
-
-        @modifier online{
-            background-color: #51dacf;
+        background-position: center;
+        @modifier phone{
+            background-image: url(../img/icon/call.png);
         }
+
+        @modifier video-call{
+            background-image: url(../img/icon/videocall.png);
+        }
+        @modifier other{
+            background-image: url(../img/icon/dot3.png);
+        }
+
+
     }
 }
 
 @component box-title{
     color: #3598db;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-transform: capitalize;
 }
