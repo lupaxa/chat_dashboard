@@ -1,0 +1,40 @@
+/*------------------USER--------------*/
+@component user{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @descendent name{
+        margin-right: 1.2rem;
+        color: #8ea1b4;
+        font-size: 1.6rem;
+        font-weight: 700;
+        @modifier chat{
+            font-size: 1.7rem;
+            color: #16315c;
+        }
+        @modifier have-msg{
+            color: #34495e;
+        }
+    }
+
+    @descendent status{
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-bottom: .2rem;
+        border-radius: 50%;
+        background-color: #d4e1ea;
+        box-shadow: 0 1px 5px #c9d6df;
+
+        @modifier chat-list{
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+        @modifier online{
+            background-color: #51dacf;
+            box-shadow: 0 2px 4px #51dacf;
+        }
+    }
+
+
+}

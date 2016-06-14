@@ -3,18 +3,14 @@
 
 @import "dialog-block.css";
 
-/*@import "page-block.css";*/
+@import "chat-list.css";
 
-/*@import "header.css";*/
+@import "chat.css";
 
-/*@import "article.css";*/
+@import "user-block.css";
 
-/*@import "sidebar.css";*/
+@import "dump-blocks.css";
 
-/*@import "slider.css";*/
 
-/*@import "dump-blocks.css";*/
-
-/*@import "footer.css";*/
 
 
